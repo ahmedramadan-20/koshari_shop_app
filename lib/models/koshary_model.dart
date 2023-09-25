@@ -1,10 +1,10 @@
-class Koshary {
+class Koushari {
   String name;
   String size;
-  String price;
+  double price;
   String image;
 
-  Koshary({
+  Koushari({
     required this.name,
     required this.size,
     required this.price,
