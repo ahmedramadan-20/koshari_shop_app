@@ -6,40 +6,46 @@ import '../models/user_status.dart';
 
 final List<Koushari> availablePlates = [
   Koushari(
-    name: 'King',
-    size: 'small',
+    name: 'King'.toUpperCase(),
+    size: 'small'.toUpperCase(),
     price: 40.00,
     image: Assets.koshary8,
+    color: const Color(0xffDE0106),
   ),
   Koushari(
-    name: 'Leader',
-    size: 'medium',
+    name: 'Leader'.toUpperCase(),
+    size: 'medium'.toUpperCase(),
     price: 50.00,
-    image: Assets.koshary9,
+    image: Assets.koshary2,
+    color: const Color(0xff3F7943),
   ),
   Koushari(
-    name: 'Mafia',
-    size: 'big',
-    price: 650.00,
+    name: 'Mafia'.toUpperCase(),
+    size: 'big'.toUpperCase(),
+    price: 65.00,
     image: Assets.koshary7,
+    color: const Color(0xffE66863),
   ),
   Koushari(
-    name: 'Ghost',
-    size: 'huge',
-    price: 40.00,
+    name: 'Ghost'.toUpperCase(),
+    size: 'huge'.toUpperCase(),
+    price: 55.00,
     image: Assets.koshary4,
+    color: const Color(0xff121212),
   ),
   Koushari(
-    name: 'Qa\'ed',
-    size: 'big',
+    name: 'Qa\'ed'.toUpperCase(),
+    size: 'big'.toUpperCase(),
     price: 60.00,
     image: Assets.koshary1,
+    color: const Color(0xff37376B),
   ),
   Koushari(
-    name: 'za\'eim',
-    size: 'bigger',
+    name: 'za\'eim'.toUpperCase(),
+    size: 'Very Big'.toUpperCase(),
     price: 70.00,
     image: Assets.koshary3,
+    color: const Color(0xffdb9797),
   ),
 ];
 
@@ -75,6 +81,10 @@ final List<UserStatus> userStatus = [
 final List categories = [
   'Koushari',
   'Casserole',
+  'Sweets',
+  'drinks',
+  'Water',
+  'Salad',
 ];
 final List featured = [
   'New',
