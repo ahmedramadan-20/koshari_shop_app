@@ -6,7 +6,7 @@ import '../models/user_status.dart';
 
 final List<Koushari> availablePlates = [
   Koushari(
-    name: 'King'.toUpperCase(),
+    name: 'ElKing'.toUpperCase(),
     size: 'small'.toUpperCase(),
     price: 40.00,
     image: Assets.koshary8,
@@ -20,7 +20,7 @@ final List<Koushari> availablePlates = [
     color: const Color(0xff3F7943),
   ),
   Koushari(
-    name: 'Mafia'.toUpperCase(),
+    name: 'elMafia'.toUpperCase(),
     size: 'big'.toUpperCase(),
     price: 65.00,
     image: Assets.koshary7,
@@ -35,7 +35,7 @@ final List<Koushari> availablePlates = [
   ),
   Koushari(
     name: 'Qa\'ed'.toUpperCase(),
-    size: 'big'.toUpperCase(),
+    size: 'more big'.toUpperCase(),
     price: 60.00,
     image: Assets.koshary1,
     color: const Color(0xff37376B),

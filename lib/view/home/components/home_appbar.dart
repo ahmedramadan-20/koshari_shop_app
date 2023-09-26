@@ -15,9 +15,9 @@ class HomeAppBar extends StatelessWidget implements  PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      title: Padding(
-        padding: const EdgeInsets.only(top: 6.0),
-        child: const Text(
+      title: const Padding(
+        padding: EdgeInsets.only(top: 6.0),
+        child: Text(
           'Discover',
           style: AppTheme.homeAppBar,
         ),
