@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:koshariapp/animations/fade_animations.dart';
 import 'package:koshariapp/cubit/layout_cubit.dart';
+import 'package:koshariapp/data/koshary_data.dart';
 import 'package:koshariapp/models/koshary_model.dart';
 import 'package:koshariapp/utils/constants.dart';
 
@@ -13,16 +14,22 @@ class DetailsView extends StatelessWidget {
   final Koushari model;
   final bool isComeFromMoreSection;
 
+
   const DetailsView(
-      {Key? key, required this.model, required this.isComeFromMoreSection})
+      {Key? key, required this.model, required this.isComeFromMoreSection,})
       : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
+    var cubit = LayoutCubit.get(context);
+    cubit.changeExtraIndex(-1);
+
     return BlocConsumer<LayoutCubit, LayoutState>(
       listener: (context, state) {},
       builder: (context, state) {
+
         return SafeArea(
           child: Scaffold(
             extendBodyBehindAppBar: true,
@@ -50,24 +57,10 @@ class DetailsView extends StatelessWidget {
                         productNameAndPrice(),
                         productInfo(size.width, size.height),
                         moreDetailsText(size.width, size.height),
-                        SizedBox(height: size.height*0.15,),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: FadeAnimation(
-                            delay: 2.5,
-                            child: MaterialButton(
-                              color: AppConstantsColor.materialButtonColor,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                              minWidth: size.width/1.2,
-                              height: size.height/15,
-                              onPressed: () {},
-                              child: Text(
-                                'add to bag'.toUpperCase(),
-                                style: TextStyle(color: AppConstantsColor.lightTextColor),
-                              ),
-                            ),
-                          ),
-                        )
+                        // SizedBox(height: size.height*0.15,),
+                        extrasText(),
+                        extrasChooser(size, cubit),
+                        addToBagButton(size,cubit,context)
                       ],
                     ),
                   )
@@ -77,6 +70,113 @@ class DetailsView extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  Widget extrasChooser(Size size, LayoutCubit cubit) {
+    return Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: SizedBox(
+                          // margin: EdgeInsets.all(10),
+                          width: size.width,
+                          height: size.height * 0.05,
+                          // color: Colors.red,
+                          child: FadeAnimation(
+                            delay: 3,
+                            child: SizedBox(
+                              width: size.width * 0.8,
+                              // margin: EdgeInsets.symmetric(horizontal: 10),
+                              child: ListView.builder(
+                                itemCount: 4,
+                                physics: const BouncingScrollPhysics(),
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      cubit.changeExtraIndex(index);
+                                    },
+                                    child: Container(
+                                      margin: const EdgeInsets.symmetric(
+                                        horizontal: 5,
+                                      ),
+                                      // width: size.width*0.15,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10),
+                                        border: Border.all(
+                                          color:
+                                              cubit.selectedExtra == index
+                                                  ? Colors.black
+                                                  : Colors.grey,
+                                          width: 1.5,
+                                        ),
+                                        color: cubit.selectedExtra == index
+                                            ? Colors.black
+                                            : AppConstantsColor
+                                                .backgroundColor,
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          '  ${extras[index]}  '.toUpperCase(),
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                cubit.selectedExtra == index
+                                                    ? Colors.white
+                                                    : Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+  }
+
+  Widget addToBagButton(Size size,LayoutCubit cubit,context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: FadeAnimation(
+        delay: 3.5,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 25.0),
+          child: MaterialButton(
+            color: model.color,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            minWidth: size.width / 1.2,
+            height: size.height / 15,
+            onPressed: () {
+              cubit.addToBag(model, context);
+            },
+            child: Text(
+              'add to bag'.toUpperCase(),
+              style: const TextStyle(color: AppConstantsColor.lightTextColor),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget extrasText() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 15.0),
+      child: FadeAnimation(
+        delay: 2.5,
+        child: const Text(
+          'Extras',
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: AppConstantsColor.darkTextColor,
+              fontSize: 22),
+        ),
+      ),
     );
   }
 
@@ -118,7 +218,7 @@ class DetailsView extends StatelessWidget {
         children: [
           Text(
             model.name,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 21,
                 fontWeight: FontWeight.bold,
                 color: AppConstantsColor.darkTextColor),

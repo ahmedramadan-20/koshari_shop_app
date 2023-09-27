@@ -49,7 +49,7 @@ final List<Koushari> availablePlates = [
   ),
 ];
 
-List<Koushari> cartItems = [];
+
 
 final List<UserStatus> userStatus = [
   UserStatus(
@@ -91,3 +91,5 @@ final List featured = [
   'Featured',
   'Upcoming',
 ];
+
+List extras = ['daqqa','spicy' ,'onion','sauce'];

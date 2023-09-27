@@ -10,9 +10,7 @@ import '../models/koshary_model.dart';
 import '../theme/custom_app_theme.dart';
 import 'constants.dart';
 
-Widget bottomCategory(
-  Size size,
-) {
+Widget bottomCategory(  Size size,) {
   return SizedBox(
     width: size.width,
     height: size.height * 0.28,
@@ -169,6 +167,7 @@ Widget mainPlatesListView(Size size, int featuredIndex, context) {
               return GestureDetector(
                 onTap: () {
                   LayoutCubit.get(context).changeFeaturedIndex(index);
+                  LayoutCubit.get(context).selectedExtra = null;
                 },
                 child: Padding(
                   padding: EdgeInsetsDirectional.symmetric(
@@ -273,14 +272,14 @@ Widget mainPlatesListView(Size size, int featuredIndex, context) {
                           ),
                         )),
                     Positioned(
-                      left: 40,
+                      left: 25,
                       top: 70,
                       child: FadeAnimation(
                         delay: 2,
                         child: Hero(
                           tag: model.image,
                           child: RotationTransition(
-                            turns: const AlwaysStoppedAnimation(-40 / 360),
+                            turns: const AlwaysStoppedAnimation(-30 / 360),
                             child: SizedBox(
                               width: 250,
                               height: 230,
@@ -353,3 +352,4 @@ Widget categoryView(Size size, int categoryIndex, context) {
     ],
   );
 }
+

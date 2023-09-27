@@ -83,7 +83,7 @@ class AppTheme{
     fontWeight: FontWeight.bold,
     color: AppConstantsColor.darkTextColor,
   );
-  static const TextStyle bagProductNumOfShoe =
+  static const TextStyle bagProductNumOfDish =
   TextStyle(fontSize: 17, fontWeight: FontWeight.bold);
   static const TextStyle bagTotalPrice = TextStyle(
       color: AppConstantsColor.darkTextColor,

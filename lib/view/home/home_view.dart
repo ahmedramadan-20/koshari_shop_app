@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:koshariapp/utils/constants.dart';
-
 import '../../cubit/layout_cubit.dart';
 import '../../cubit/layout_state.dart';
 import '../../utils/components.dart';
@@ -18,14 +16,12 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-
     var cubit = LayoutCubit.get(context);
     Size size = MediaQuery.sizeOf(context);
 
     return BlocConsumer<LayoutCubit, LayoutState>(
       listener: (context, state) {},
       builder: (context, state) {
-
         return SafeArea(
           child: Scaffold(
             backgroundColor: AppConstantsColor.backgroundColor,
@@ -46,7 +42,9 @@ class _HomeViewState extends State<HomeView> {
                   context,
                 ),
                 moreTextAndIcon(),
-                bottomCategory(size,),
+                bottomCategory(
+                  size,
+                ),
               ],
             ),
           ),
