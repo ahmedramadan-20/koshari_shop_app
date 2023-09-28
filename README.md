@@ -18,7 +18,7 @@ A new Flutter Koshari shop app using Animations and Cubit as state management.
 <img alt="Home"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/profile.png"/>
 
 ## Result
-<img alt="Result" height="400" src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/result.gif"/>
+<img alt="Result"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/result.gif"/>
 
 
 ## Getting Started
