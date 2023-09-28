@@ -9,6 +9,8 @@ import '../../cubit/layout_cubit.dart';
 import '../../cubit/layout_state.dart';
 import '../../theme/custom_app_theme.dart';
 
+
+
 class BagView extends StatelessWidget {
   const BagView({super.key});
 

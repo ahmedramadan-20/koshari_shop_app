@@ -79,7 +79,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     }
   }
 
-// price of items on bag
+  // price of items on bag
   double allItemsOnBagPrice() {
     double sumPrice = 0.0;
     for (Koushari item in bagItems) {
@@ -92,5 +92,14 @@ class LayoutCubit extends Cubit<LayoutState> {
   void removeFromBag(Koushari item) {
     bagItems.remove(item);
     emit(RemoveFromCartState());
+  }
+
+
+  //user status
+  int currentStatusIndex = 1;
+
+  void changeUserStatus(int index ){
+    currentStatusIndex = index;
+    emit(ChangeUserStatusState());
   }
 }

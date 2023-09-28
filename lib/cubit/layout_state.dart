@@ -25,6 +25,10 @@ class AddedToCartFailedState extends LayoutState{}
 // remove from bag state
 class RemoveFromCartState extends LayoutState{}
 
+// user status state
+class ChangeUserStatusState extends LayoutState{}
+
+
 
 
 
