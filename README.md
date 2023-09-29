@@ -1,6 +1,25 @@
 # koshariapp
 
-A new Flutter project.
+A new Flutter Koshari shop app using Animations and Cubit as state management.
+
+## Home
+<img alt="Home"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/home.png"/>
+
+## Empty Bag
+<img alt="Home"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/bag%20empty.png"/>
+
+## Bag
+<img alt="Home"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/bag.png"/>
+
+## Details
+<img alt="Home"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/details.png"/>
+
+## Profile 
+<img alt="Home"  src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/profile.png"/>
+
+## Result
+<img alt="Result" height="400" src="https://github.com/ahmedramadan-20/simple_koshari_app/blob/master/assets/screen%20shots/result.gif"/>
+
 
 ## Getting Started
 
