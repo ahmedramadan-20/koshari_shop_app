@@ -42,6 +42,7 @@ dependencies:
   bloc: ^8.1.2
   flutter_bloc: ^8.1.3
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,11 +53,28 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.3.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+flutter_native_splash:
+  background_image: assets/images/splash.png
+  color: "#fa2f65"
+  android_12:
+  # The image parameter sets the splash screen icon image.  If this parameter is not specified,
+  # the app's launcher icon will be used instead.
+  # Please note that the splash screen will be clipped to a circle on the center of the screen.
+  # App icon with an icon background: This should be 960×960 pixels, and fit within a circle
+  # 640 pixels in diameter.
+  # App icon without an icon background: This should be 1152×1152 pixels, and fit within a circle
+  # 768 pixels in diameter.
+    image: assets/images/splash.png
+
+  # Splash screen background color.
+    color: "#fa2f65"
+
 flutter:
 
   # The following line ensures that the Material Icons font is
